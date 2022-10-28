@@ -66,4 +66,19 @@ public class CustomListTest {
         list.delete(test);
         assertFalse(list.hasCity(test));
     }
+
+    /**
+     * create an empty cities list
+     * check that countCities returns 0
+     * add 3 mock cities to list
+     * check that countCities returns 3
+     */
+    @Test
+    public void countCitiesTest() {
+        list = MockCityList();
+        assertEquals(0, list.countCities());
+        list.addCity(new City("Edmonton", "AB"));
+        list.addCity(new City("Vancouver", "BC"));
+        assertEquals(2, list.countCities());
+    }
 }
